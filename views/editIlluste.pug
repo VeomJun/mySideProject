@@ -1,0 +1,10 @@
+extends layout/main
+
+block here
+    .form-container
+        form(action=routes.editIlluste(illuste.id), method="post")
+            input(type="text", placeholder="Title", name="title", required=true, value=illuste.title)
+            textarea(name="description", placeholder="Description", required=true)=illuste.description
+            input(type="submit", value="Update Illuste")
+        a.form-container__link.form-container__link--delete(href=routes.deleteIlluste(illuste.id)) 
+            button Delete Illuste 

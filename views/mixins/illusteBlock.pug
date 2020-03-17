@@ -1,0 +1,7 @@
+mixin illusteBlock(content = {})
+    .homeSquare
+        a(href=routes.illusteDetail(content.id))
+            img.home__previewImg(src=content.fileUrl)
+            .home__previewText
+                h2=content.title
+                h5=content.description

@@ -1,0 +1,12 @@
+extends layout/main
+include mixins/noticeBlock
+
+block here
+    .square
+        each content in notice
+            +noticeBlock({
+                id:content.id,
+                fileUrl:content.fileUrl,
+                title:content.title,
+                description:content.description
+            })

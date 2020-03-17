@@ -1,0 +1,6 @@
+mixin noticeBlock(content = {})
+    .homeSquare
+        a(href=routes.noticeDetail(content.id))
+            img.home__previewImg(src=content.fileUrl)
+            .home__previewText
+                h1=content.title

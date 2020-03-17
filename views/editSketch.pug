@@ -1,0 +1,10 @@
+extends layout/main
+
+block here
+    .form-container
+        form(action=routes.editSketch(sketch.id), method="post")
+            input(type="text", placeholder="Title", name="title", required=true, value=sketch.title)
+            textarea(name="description", placeholder="Description", required=true)=sketch.description
+            input(type="submit", value="Update Sketch")
+        a.form-container__link.form-container__link--delete(href=routes.deleteSketch(sketch.id)) 
+            button Delete Sketch 

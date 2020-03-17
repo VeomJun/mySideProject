@@ -1,0 +1,12 @@
+extends layout/main
+include mixins/backBlock
+
+block here
+    .homePageSquare.container
+        each content in back
+            +backBlock({
+                fileUrlOne:content.fileUrlOne,
+                fileUrlTwo:content.fileUrlTwo,
+                fileUrlThree:content.fileUrlThree,
+                fileUrlFour:content.fileUrlFour
+            })

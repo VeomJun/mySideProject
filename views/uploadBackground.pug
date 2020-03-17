@@ -1,0 +1,17 @@
+extends layout/main
+
+block here
+    .upload
+        a(href=`/upload${routes.uploadComics}`)
+            button.upload-btn__comics Comics
+        a(href=`/upload${routes.uploadIlluste}`)
+            button.upload-btn__illuste Illuste
+        a(href=`/upload${routes.uploadSketch}`)
+            button.upload-btn__sketch Sketch
+        a(href=`/upload${routes.uploadNotice}`)
+            button.upload-btn__notice  Notice
+    .form-container
+        form(action=`/upload${routes.uploadBackground}`, method="post", enctype="multipart/form-data")
+            label(for="file") Background File
+            input(type="file", id="file", name="oneBackgroundFile", multiple)
+            input(type="submit", value="Upload Background")

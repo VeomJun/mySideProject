@@ -1,0 +1,10 @@
+extends layout/main
+
+block here
+    .form-container
+        form(action=routes.editComics(comics.id), method="post")
+            input(type="text", placeholder="Title", name="title", required=true, value=comics.title)
+            textarea(name="description", placeholder="Description", required=true)=comics.description
+            input(type="submit", value="Update Comics")
+        a.form-container__link.form-container__link--delete(href=routes.deleteComics(comics.id)) 
+            button Delete Comics 

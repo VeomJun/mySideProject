@@ -1,0 +1,41 @@
+.square {
+  width: 100%;
+  .square-middle {
+    margin: 0 auto;
+    max-width: 1100px;
+    width: 100%;
+  }
+  .homeSquare {
+    width: 500px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    .home__previewImg {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+    .home__previewText {
+      padding: 15px;
+      h1 {
+        font-size: 17px;
+        margin: 10px;
+        text-align: center;
+        opacity: 0.6;
+      }
+      h2 {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      h5 {
+        font-size: 12px;
+        opacity: 0.6;
+      }
+    }
+  }
+}

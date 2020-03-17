@@ -1,0 +1,24 @@
+extends layout/main
+
+block here
+    .upload
+        a(href=`/upload${routes.uploadIlluste}`)
+            button.upload-btn__illuste Illuste
+        a(href=`/upload${routes.uploadSketch}`)
+            button.upload-btn__sketch Sketch
+        a(href=`/upload${routes.uploadNotice}`)
+            button.upload-btn__notice  Notice
+        a(href=`/upload${routes.uploadBackground}`)
+            button.upload-btn__background  Background
+    .form-container
+        form(action=`/upload${routes.uploadComics}`, method="post", enctype="multipart/form-data")
+            label(for="file") Thumbnail File
+            input(type="file", id="file", name="comicsFile", multiple)
+            label(for="file") Comics File
+            input(type="file", id="file", name="noComicsFile", multiple)
+            input(type="text", placeholder="Title", name="title", required=true)
+            textarea(name="description", placeholder="Description", required=true)
+            // '\r\n'은 'end of the line'. 즉, 줄의 끝을 의미하는 것으로
+            // 쉽게 말해 줄바꿈이 이루어지는 것을 의미한다
+            // 그리고 이를 통해서 text area에서 줄바꿈을 표현할 수 있다.
+            input(type="submit", value="Upload Comics")

@@ -1,0 +1,35 @@
+nav.header-head.container
+    .header-middle
+        .header-wrapper
+            .header-column
+                a(href=routes.home)
+                    span.header-logo #{siteName}
+            .header-column
+                ul.header-list
+                    li 
+                        a(href=routes.comics) Comics
+                    li 
+                        a(href=routes.illuste) Illustration
+                    li 
+                        a(href=routes.sketch) Sketch
+                    li
+                        a(href=routes.notice) Notice
+                    li 
+                        a(href=routes.about) About
+            .header-column
+                ul.header-list
+                    if loggedUser
+                        li
+                            a(href=routes.me) My Profile
+                        li
+                            a(href=routes.logout) Logout
+                    else
+                        li 
+                            a(href=routes.join) Join
+                        li
+                            a(href=routes.login) Login
+            i.fas.fa-search
+            i.fas.fa-times
+        .header-search
+            form(action=routes.search, method="get")
+                input.header-input(type="text", name="term")

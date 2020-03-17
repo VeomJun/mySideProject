@@ -1,0 +1,24 @@
+.head-footer {
+  display: flex;
+  flex-direction: column;
+  max-width: 1400px;
+  width: 100%;
+  padding: 80px 150px;
+  font-size: 14px;
+  font-family: "Trade Winds";
+  border-top: 2px rgba(0, 0, 0, 0.267) solid;
+  .icons-footer {
+    display: flex;
+    font-size: 42px;
+    i {
+      margin-right: 30px;
+    }
+  }
+  .line-footer {
+    font-size: 17px;
+  }
+  .icons-footer,
+  .line-footer {
+    margin-bottom: 30px;
+  }
+}

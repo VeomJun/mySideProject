@@ -1,0 +1,20 @@
+mixin backBlock( content={} )
+    .homeMiddle
+        .homePage
+            img.direction-img(src=content.fileUrlOne)
+            img.direction-img(src=content.fileUrlTwo)
+            img.direction-img(src=content.fileUrlThree)
+            img.direction-img(src=content.fileUrlFour)
+        .front
+            a(href=routes.about)
+                img.front-img(src="https://ch20webmaster.com/wp-content/uploads/2018/01/Bbc-Sherlock-Wallpaper-Ch063b.jpg")
+            h4 Hello Everyone!
+            .front-icons
+                a(href="#")
+                    .icons-front__twitter
+                        i.fab.fa-twitter-square
+                        span Twitter
+                a(href="#")
+                    .icons-front__facebook
+                        i.fab.fa-facebook
+                        span Facebook

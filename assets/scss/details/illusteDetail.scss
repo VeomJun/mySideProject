@@ -1,0 +1,53 @@
+.illuste__big {
+  width: 100%;
+  margin-top: 200px;
+  .illuste__main {
+    margin: 0 auto;
+    width: 60%;
+    .illuste__detail {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        width: 80%;
+        height: 80%;
+      }
+      img.undefined {
+        display: none;
+      }
+    }
+    .illuste__title {
+      font-size: 17px;
+      margin: 15px;
+      padding: 17px;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+    }
+    .illuste__info {
+      margin: 25px 0px;
+      .illuste__views {
+        font-size: 19px;
+        margin: 15px 0px;
+        font-weight: 500;
+      }
+      button {
+        width: 150px;
+        background-color: #3498db;
+        color: white;
+      }
+    }
+    .illuste__comments {
+      font-size: 17px;
+      font-weight: 700;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 50px 0px;
+      .illuste-input {
+        padding: 10px;
+        margin-top: 20px;
+        width: 700px;
+      }
+    }
+  }
+}

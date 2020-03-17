@@ -1,0 +1,67 @@
+.form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0px;
+  form {
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    textarea {
+      margin-bottom: 30px;
+    }
+    label {
+      font-weight: 700;
+    }
+  }
+  .social-login__naver {
+    background-color: #4cd137;
+    color: white;
+    i {
+      margin-right: 8px;
+    }
+  }
+  .social-login__kakao {
+    background-color: #fbc531;
+    color: white;
+    i {
+      margin-right: 8px;
+    }
+  }
+}
+
+.upload {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0px;
+  a {
+    button {
+      margin-bottom: 20px;
+    }
+    .upload-btn__comics {
+      background-color: #64b3f4;
+      color: white;
+    }
+    .upload-btn__illuste {
+      background-color: #eea849;
+      color: white;
+    }
+    .upload-btn__sketch {
+      background-color: #e53935;
+      color: white;
+    }
+    .upload-btn__notice {
+      background-color: #fc00ff;
+      color: white;
+    }
+    .upload-btn__background {
+      background-color: #6a9113;
+      color: white;
+    }
+  }
+}

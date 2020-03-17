@@ -1,0 +1,12 @@
+extends layout/main
+include mixins/comicsBlock
+
+block here
+    .square
+         each content in comics
+            +comicsBlock({
+                id:content.id,  
+                fileUrl:content.fileUrl,
+                title:content.title,
+                description:content.description
+            })

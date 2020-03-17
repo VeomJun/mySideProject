@@ -1,0 +1,10 @@
+mixin sketchBlock(content = {})
+    .homeSquare
+        a(href=routes.sketchDetail(content.id))
+            img.home__previewImg(src=content.fileUrl)
+            <!-- home 화면에 사진이 안 떴던 이유. model 상에서 파일의 정보를 갖고 있는 값이 fileUrl인데-->
+            <!--이전에 설정해 놓았던 comicsFile을 수정하지 않은 상태로 그대로였기 때문에-->
+            <!--model로 부터 정보를 가져올 수가 없어서 화면에 아무것도 뜨지 않았던 것. -->
+            .home__previewText
+                h2=content.title
+                h5=content.description

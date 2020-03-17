@@ -1,0 +1,22 @@
+extends layout/main
+
+block here
+    .upload
+        a(href=`/upload${routes.uploadComics}`)
+            button.upload-btn__comics Comics
+        a(href=`/upload${routes.uploadIlluste}`)
+            button.upload-btn__illuste Illuste
+        a(href=`/upload${routes.uploadSketch}`)
+            button.upload-btn__sketch Sketch
+        a(href=`/upload${routes.uploadBackground}`)
+            button.upload-btn__background  Background
+    .form-container
+        form(action=`/upload${routes.uploadNotice}`, method="post", enctype="multipart/form-data")
+            label(for="file") Thumbnail File
+            input(type="file", id="file", name="noticeFile", required=true, multiple)
+            label(for="file") Notices File
+            input(type="file", id="file", name="noNoticeFile", required=true, multiple)
+            input(type="text", placeholder="Title", name="title", required=true)
+            textarea.textareaJs(name="description", placeholder="Description", required=true, rows="4", cols="50")
+            input(type="submit", value="Upload Notice")
+    

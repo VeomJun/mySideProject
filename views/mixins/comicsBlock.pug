@@ -1,0 +1,8 @@
+mixin comicsBlock(content = {})
+    .homeSquare
+        a(href=routes.comicsDetail(content.id))
+            img.home__previewImg(src=content.fileUrl)
+            img.home__previewImg(src=content.fileUrlOne)
+            .home__previewText
+                h2=content.title
+                h5=content.description

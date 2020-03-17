@@ -1,0 +1,10 @@
+extends layout/main
+
+block here
+    .form-container
+        form(action=routes.editNotice(notice.id), method="post")
+            input(type="text", placeholder="Title", name="title", required=true, value=notice.title)
+            textarea(name="description", placeholder="Description", required=true)=notice.description
+            input(type="submit", value="Update Notice")
+        a.form-container__link.form-container__link--delete(href=routes.deleteNotice(notice.id)) 
+            button Delete Notice 

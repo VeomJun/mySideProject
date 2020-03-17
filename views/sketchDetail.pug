@@ -1,0 +1,67 @@
+extends layout/main
+
+block here
+    .sketch__big
+        .sketch__main
+            .sketch__title  
+                h2=sketch.title
+            .sketch__detail
+                img(src=sketch.fileUrlOne)
+                img(src=sketch.fileUrlTwo)
+                img(src=sketch.fileUrlThree)
+                img(src=sketch.fileUrlFour)
+                img(src=sketch.fileUrlFive)
+                img(src=sketch.fileUrlSix)
+                img(src=sketch.fileUrlSeven)
+                img(src=sketch.fileUrlEight)
+                img(src=sketch.fileUrlNine)
+                img(src=sketch.fileUrlTen)
+                img(src=sketch.fileUrlEleven)
+                img(src=sketch.fileUrlTwelve)
+                img(src=sketch.fileUrlThirteen)
+                img(src=sketch.fileUrlFourteen)
+                img(src=sketch.fileUrlFifteen)
+            .sketch__info
+                if loggedUser && sketch.creator.id === loggedUser.id
+                    a(href=routes.editSketch(sketch.id))
+                        button Edit Sketch
+                h5.sketch__views #{sketch.views} views
+            .sketch__comments
+                if sketch.comments.length === 1
+                    span.sketch__comments-number 
+                        span#jsNumber 1 
+                        |  comment
+                else 
+                    span.sketch__comments-number 
+                        span#jsNumber #{sketch.comments.length} 
+                        |  comments
+                form.sketch__form#jsComment
+                    input.sketch-input(type="text", placeholder="Leave a Comment")
+                ul.sketch__comments.allRound-comments#jsList
+                    each content in sketch.comments.reverse()
+                        li
+                            if loggedUser && (String(content.creator) === loggedUser.id)
+                                h1.jsText=content.text
+                                    button.jsRemoveBtn(id=String(content.id)) ❌
+                            else
+                                h1=content.text
+    .remote__case
+        .remote
+            .remote__title
+                h1 REMOTE
+                i.far.fa-times-circle
+            .remote__body
+                h1=sketch.title
+                .remote__btns
+                    if wow === 0 && length >= 2
+                        a(href=newSketch[wow+1].id)
+                            i.fas.fa-angle-right
+                    else if wow === 0 && length === 1
+                    else if 1 <= wow, wow + 1 !== length
+                        a(href=newSketch[wow-1].id)
+                            i.fas.fa-angle-left
+                        a(href=newSketch[wow+1].id)
+                            i.fas.fa-angle-right
+                    else
+                        a(href=newSketch[wow-1].id)
+                            i.fas.fa-angle-left

@@ -1,0 +1,73 @@
+extends layout/main
+block here
+    .comics__big
+        .comics__main
+            .comics__title
+                h3=comics.title
+            .comics__detail
+                img(src=comics.fileUrlOne)
+                img(src=comics.fileUrlTwo)
+                img(src=comics.fileUrlThree)
+                img(src=comics.fileUrlFour)
+                img(src=comics.fileUrlFive)
+                img(src=comics.fileUrlSix)
+                img(src=comics.fileUrlSeven)
+                img(src=comics.fileUrlEight)
+                img(src=comics.fileUrlNine)
+                img(src=comics.fileUrlTen)
+                img(src=comics.fileUrlEleven)
+                img(src=comics.fileUrlTwelve)
+                img(src=comics.fileUrlThirteen)
+                img(src=comics.fileUrlFourteen)
+                img(src=comics.fileUrlFifteen)
+            .comics__info
+                if loggedUser && comics.creator.id === loggedUser.id
+                    a(href=routes.editComics(comics.id)) 
+                        button Edit Comics
+                h5.comics__views #{comics.views} views
+                //.comics__author
+                    | Uploaded by 
+                    a(href=routes.userDetail(comics.creator.id))=comics.creator.name
+                    a(href="#")=comics.creator.name
+            .comics__comments
+                if comics.comments.length === 1 
+                    span.comics__comments-number 
+                        span#jsNumber 1 
+                        |  comment
+                else 
+                    span.comics__comments-number 
+                        span#jsNumber #{comics.comments.length} 
+                        |  comments
+                form.comics__form#jsComment
+                    input.comics-input(type="text", placeholder="Leave a Comment")
+                ul.comics__comments.allRound-comments#jsList
+                    each content in comics.comments.reverse()
+                        li
+                            if loggedUser && (String(content.creator) === loggedUser.id)
+                                h1.jsText=content.text
+                                    button.jsRemoveBtn(id=String(content.id)) ❌
+                            else
+                                h1=content.text
+
+    .remote__case
+        .remote
+            .remote__title
+                h1 REMOTE
+                .x-circle
+                    i.far.fa-times-circle
+            .remote__body
+                h1=comics.title
+                .remote__btns
+                    if wow === 0 && length >= 2
+                        a(href=newComics[wow+1].id)
+                            i.fas.fa-angle-right
+                    else if wow === 0 && length === 1
+                    else if 1 <= wow, wow + 1 !== length
+                        a(href=newComics[wow-1].id)
+                            i.fas.fa-angle-left
+                        a(href=newComics[wow+1].id)
+                            i.fas.fa-angle-right
+                    else
+                        a(href=newComics[wow-1].id)
+                            i.fas.fa-angle-left
+

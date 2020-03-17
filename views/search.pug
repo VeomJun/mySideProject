@@ -1,0 +1,39 @@
+extends layout/main
+include mixins/comicsBlock
+include mixins/illusteBlock
+include mixins/sketchBlock
+include mixins/noticeBlock
+
+block here
+    .square
+        .square-middle
+            .search__result
+                div #{searchingBy}에 대한 검색결과 입니다.
+            each content in comics
+                +comicsBlock({
+                    fileUrl:content.fileUrl,
+                    title:content.title,
+                    description:content.description
+                })
+            each content in illuste
+                +illusteBlock({
+                    id:content.id,
+                    fileUrl:content.fileUrl,
+                    title:content.title,
+                    description:content.description
+                })
+            each content in sketch
+                +sketchBlock({
+                    id:content.id,
+                    fileUrl:content.fileUrl,
+                    title:content.title,
+                    description:content.description
+                })
+            each content in notice
+                +noticeBlock({
+                    id:content.id,
+                    fileUrl:content.fileUrl,
+                    title:content.title,
+                    description:content.description
+                })
+            

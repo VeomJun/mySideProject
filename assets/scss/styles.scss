@@ -1,0 +1,16 @@
+@import "config/variables";
+@import "config/reset.scss";
+@import "main.scss";
+
+@import "partials/header.scss";
+@import "partials/footer.scss";
+@import "partials/home.scss";
+@import "partials/form.scss";
+
+@import "preview.scss";
+
+@import "details/comicsDetail.scss";
+@import "details/illusteDetail.scss";
+@import "details/sketchDetail.scss";
+@import "details/noticeDetail.scss";
+@import "details/userDetail.scss";
