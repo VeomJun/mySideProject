@@ -5,7 +5,9 @@ dotenv.config();
 // 위를 통해 .env 파일에 입력해 놓은 값을 아래처럼 바로 가져올 수 있다. (보안상의 문제)
 // 이런 식으로 env를 사용하여 중요한 키 값들을 감추어 놓을 수 있다.
 
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect(
+  process.env.MONGO_URL_PROD, 
+  {
   // 해당 mongodb에 부여된 저장소의 url은 27017로, localhost:27017을 부여해 줌. 이름은 humor.(로컬 db)
   // MONG_URL_PROD는 몽고 랩상에 업로드하는 url주소
   useNewUrlParser: true,
